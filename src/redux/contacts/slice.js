@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addNewContact, getAllContacts, removeContact } from './operations';
+import { addNewContact, getAllContacts, removeContact } from './thunks';
 
 const initialState = {
   items: [],
@@ -11,6 +11,7 @@ export const contactsSlice = createSlice({
   extraReducers: builder => {
     builder
       .addCase(getAllContacts.fulfilled, (state, { payload }) => {
+        console.log(payload)
         state.items = payload;
       })
       .addCase(addNewContact.fulfilled, (state, { payload }) => {

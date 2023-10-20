@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import 'modern-normalize'
 
-export const AppCont = styled('div')(() => {
+export const ContPageBox = styled('div')(() => {
   return {
     marginTop: 20,
     '& h1': {

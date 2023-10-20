@@ -1,6 +1,47 @@
+import { useState } from "react";
 import { Form } from "./styled";
+import { selectorContacts } from "redux/contacts/selectors";
+import { useDispatch, useSelector } from "react-redux";
+import { addNewContact } from "redux/contacts/thunks";
 
-const FormContact = ({ handleChange, handleSubmit, name, number }) => {
+const FormContact = () => {
+
+  const [name, setName] = useState('');
+  const [number, setNumber] = useState('');
+  const { items } = useSelector(selectorContacts);
+  const dispatch = useDispatch();
+
+    const handleChange = ({ target: { value, name } }) => {
+      switch (name) {
+        case 'name':
+          setName(value);
+          break;
+
+        case 'number':
+          setNumber(value);
+          break;
+
+        default:
+          console.warn(`Name '${name}' does not exist`);
+      }
+      // if(name === 'name') setName(value);
+      // else setNumber(value);
+    };
+
+    const handleSubmit = evt => {
+      evt.preventDefault();
+      const isAlreadyExist = items.find(
+        el => el.name.toLowerCase() === name.toLowerCase()
+      );
+      if (isAlreadyExist) {
+        alert(`${name} is already in contacts`);
+      } else {
+        dispatch(addNewContact({ name, number }));
+      }
+      setName('');
+      setNumber('');
+    };
+
   return (
     <Form onSubmit={handleSubmit}>
       <div>
