@@ -28,7 +28,7 @@ const Home = () => {
         </p>
       </div>
       <img
-        src={require('./Phonebook.jpg')}
+        src={require('./PhonebookX.jpg')}
         alt="Phonebook"
         width="50%"
         className="rounded border border-2"
