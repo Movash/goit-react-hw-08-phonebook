@@ -1,19 +1,26 @@
-import Contact from "components/Contact";
 import { ContPageBox } from "./styled";
 import Filter from "components/Filter";
-// import Loader from "components/Loader";
-// import Error from "components/Error";
 import ContactList from "components/ContactList";
+import FormContact from "Forms/FormContact";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { getAllContacts } from "redux/contacts/thunks";
 
 const Phonebook = () => {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllContacts());
+    console.log('useEffect');
+  }, [dispatch]);
+
   return (
     <ContPageBox>
       <h1>Phonebook</h1>
-      <Contact />
+      <FormContact />
       <h2>Contacts</h2>
       <Filter />
-      {/* <Error />
-      <Loader /> */}
       <ContactList />
     </ContPageBox>
   );
