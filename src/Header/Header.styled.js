@@ -2,6 +2,11 @@ import { styled } from 'styled-components';
 
 export const Nav = styled('nav')(() => {
   return {
+    // zIndex: 99999,
+    // position: 'fixed',
+    // top: 0,
+    // left: 0,
+    // right: 0,
     paddingTop: 15,
     paddingBottom: 15,
     borderBottom: '1px solid gray',
@@ -21,10 +26,5 @@ export const Nav = styled('nav')(() => {
         },
       },
     },
-    // '& .enter': {
-    //   display: 'flex',
-    //   flexDirection: 'row',
-    //   alignItems: 'center',
-    // },
   };
 });
