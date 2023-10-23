@@ -12,7 +12,6 @@ const Phonebook = () => {
 
   useEffect(() => {
     dispatch(getAllContacts());
-    console.log('useEffect');
   }, [dispatch]);
 
   return (

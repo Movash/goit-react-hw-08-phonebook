@@ -3,9 +3,9 @@ import { lazy, useEffect } from 'react';
 import Layout from 'Layout/Layout';
 import { useDispatch, useSelector } from 'react-redux';
 import { refreshThunk } from 'redux/auth/thunks';
-import { selectorAppState } from 'redux/appState/selectors';
 import PrivateRoute from 'guards/PrivateRoute';
 import PublicRoute from 'guards/PublicRoute';
+import { isRefreshingSelector } from 'redux/auth/selectors';
 const Home = lazy(() => import('pages/HomePage'));
 const Phonebook = lazy(() => import('pages/PhonebookPage'));
 const Login = lazy(() => import('pages/Login'));
@@ -14,14 +14,14 @@ const Registration = lazy(() => import('pages/Registration'));
 const App = () => {
 
   const dispatch = useDispatch();
-  const { isLoading } = useSelector(selectorAppState);
+  const { isRefreshing } = useSelector(isRefreshingSelector);
 
   useEffect(() => {
     dispatch(refreshThunk());
   }, [dispatch]);
 
   return (
-    !isLoading && (
+    !isRefreshing && (
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

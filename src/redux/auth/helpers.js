@@ -3,8 +3,14 @@ export const handleAuth = (state, { payload }) => {
   state.user = payload.user;
 };
 
-export const handleRefresh = (state, { payload }) => {
+export const handleRefreshFul = (state, { payload }) => {
   state.user = payload;
+  state.isRefreshing = false;
+};
+
+export const handleRefreshRej = (state) => {
+  state.token = '';
+  state.isRefreshing = false;
 };
 
 export const handleLogout = state => {

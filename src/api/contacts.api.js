@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export async function fetchContacts() {
-  console.log('fetch')
   const { data } = await axios.get('contacts');
   return data;
 }

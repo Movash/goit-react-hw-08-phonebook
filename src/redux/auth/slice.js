@@ -3,13 +3,14 @@ import {
   refreshThunk,
   loginThunk,
   logoutThunk,
-  registrstionThunk,
+  registrationThunk,
 } from './thunks';
-import { handleAuth, handleLogout, handleRefresh } from './helpers';
+import { handleAuth, handleLogout, handleRefreshFul, handleRefreshRej } from './helpers';
 
 const initialState = {
   token: '',
   user: null,
+  isRefreshing: true,
 };
 
 export const authSlice = createSlice({
@@ -17,9 +18,10 @@ export const authSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addCase(registrstionThunk.fulfilled, handleAuth)
+      .addCase(registrationThunk.fulfilled, handleAuth)
       .addCase(loginThunk.fulfilled, handleAuth)
-      .addCase(refreshThunk.fulfilled, handleRefresh)
+      .addCase(refreshThunk.fulfilled, handleRefreshFul)
+      .addCase(refreshThunk.rejected, handleRefreshRej)
       .addCase(logoutThunk.fulfilled, handleLogout);
   },
 });

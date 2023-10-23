@@ -10,14 +10,14 @@ const Login = () => {
     try {
       await dispatch(loginThunk(body)).unwrap()
       toast.success('Login successful', {
-          duration: 3000,
-          position: 'top-right',
-        })
+        duration: 3000,
+        position: 'top-center',
+      });
     } catch (error) {
       toast.error('Email or password error', {
-          duration: 3000,
-          position: 'top-right',
-        })
+        duration: 3000,
+        position: 'top-center',
+      });
     }
   };
 
