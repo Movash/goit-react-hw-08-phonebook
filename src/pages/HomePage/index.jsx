@@ -21,7 +21,7 @@ const Home = () => {
           not near your device, but you urgently need to know the desired
           contact, just enter through any other device and log in to your
           account. All data will be waiting for you there! Try it and you'll
-          never go back to paper phone books again.
+          never go back to paper phone books again.&nbsp;
           {user ? (
             <>
               As you are already logged into the account, quickly go to the
