@@ -9,8 +9,7 @@ export const Form = styled('form')(() => {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    width: 350,
-    border: '2px solid #000',
+    width: 400,
     gap: 20,
     '& div': {
       display: 'flex',
@@ -21,11 +20,13 @@ export const Form = styled('form')(() => {
         marginRight: 'auto',
       },
       '& input': {
-        width: 200,
+        width: 300,
+      },
+      '& input::placeholder': {
+        opacity: 0.5,
       },
     },
     '& button': {
-      marginBottom: 20,
       fontWeight: 700,
       fontSize: 20,
       lineHeight: 1.5,

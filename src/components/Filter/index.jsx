@@ -15,9 +15,11 @@ const Filter = () => {
     <FilterCont>
       <label>Find contacts by name</label>
       <input
+        className="form-control border-success-subtle border-2"
         type="text"
         name="filter"
         pattern="^[^\d]+$"
+        placeholder="Albert Einstein"
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
         required
         value={filter}

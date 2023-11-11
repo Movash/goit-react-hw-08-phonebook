@@ -3,7 +3,8 @@ import 'modern-normalize'
 
 export const ContPageBox = styled('div')(() => {
   return {
-    marginTop: 20,
+    marginTop: 90,
+    marginBottom: 40,
     '& h1': {
       textAlign: 'center',
     },

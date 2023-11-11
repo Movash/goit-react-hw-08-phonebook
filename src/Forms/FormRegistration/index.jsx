@@ -11,7 +11,10 @@ const FormRegistration = ({ registration }) => {
   };
 
   return (
-    <div className="card mx-auto mt-5" style={{ width: 450 }}>
+    <div
+      className="card mx-auto border border-dark-subtle border-3"
+      style={{ width: '450px', marginTop: '180px' }}
+    >
       <div className="card-body">
         <form onSubmit={handleSubmit}>
           <div className="mb-3">

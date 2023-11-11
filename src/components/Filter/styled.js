@@ -12,9 +12,12 @@ export const FilterCont = styled('div')(() => {
       marginRight: 'auto',
     },
     '& input': {
-      width: 200,
+      width: 300,
       marginLeft: 'auto',
       marginRight: 'auto',
+    },
+    '& input::placeholder': {
+      opacity: 0.5,
     },
   };
 });

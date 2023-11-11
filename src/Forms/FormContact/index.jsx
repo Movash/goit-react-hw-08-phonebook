@@ -43,10 +43,14 @@ const FormContact = () => {
     };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form
+      onSubmit={handleSubmit}
+      className="border border-primary-subtle border-3 rounded rounded-4 bg-primary-subtle"
+    >
       <div>
-        <label>Name</label>
+        <label className="fs-4 mt-2">Name</label>
         <input
+          className="form-control border-success-subtle border-2"
           autoComplete="off"
           type="text"
           name="name"
@@ -59,8 +63,9 @@ const FormContact = () => {
         />
       </div>
       <div>
-        <label>Numder</label>
+        <label className="fs-4">Numder</label>
         <input
+          className="form-control border-success-subtle border-2"
           autoComplete="off"
           type="tel"
           name="number"
@@ -72,7 +77,9 @@ const FormContact = () => {
           value={number}
         />
       </div>
-      <button type="submit">Add contact</button>
+      <button type="submit" className="mb-3">
+        Add contact
+      </button>
     </Form>
   );
 };
